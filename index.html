@@ -648,8 +648,7 @@
               </div>
               <div class="col-md-3">
                 <label for="monitoringObserver" class="form-label">Observer</label>
-                <input type="text" class="form-control" id="monitoringObserver" required 
-                  value="${ecoData.settings.user.name || ''}">
+                <input type="text" class="form-control" id="monitoringObserver" required>
                 <div class="invalid-feedback">Please provide observer's name.</div>
               </div>
               <div class="col-md-3">
@@ -921,9 +920,11 @@
     // Load data from localStorage
     function loadData() {
       // Set default observer name if available
-      const observerField = document.getElementById('monitoringObserver');
-      if (observerField && ecoData.settings.user.name) {
-        observerField.value = ecoData.settings.user.name;
+const observerField = document.getElementById('monitoringObserver');
+if (observerField && ecoData.settings?.user?.name) {
+  observerField.value = ecoData.settings.user.name;
+}
+
       }
 
       const saved = localStorage.getItem("ecoMaintainData");
